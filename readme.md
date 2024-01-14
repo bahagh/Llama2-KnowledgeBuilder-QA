@@ -30,7 +30,7 @@ open cmd or powershell and :
  git clone https://github.com/bahagh/Llama2-KnowledgeBuilder-QA.git
 ```
 ```bash
- cd assignment\task2
+ cd Llama2-KnowledgeBuilder-QA
 ```
 ### Install required packages
 ```bash
