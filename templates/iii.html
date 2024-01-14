@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+</head>
+<body>
+    <h1>Chatbot</h1>
+    <form id="chatForm">
+        <label for="userInput">Enter your question:</label>
+        <input type="text" id="userInput" name="userInput" required>
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+    <div id="responseContainer"></div>
+
+    <script>
+        function submitForm() {
+            var userInput = document.getElementById("userInput").value;
+
+            // Send a POST request to the Flask app
+            fetch("/chat", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ user_input: userInput }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display the response in the responseContainer
+                document.getElementById("responseContainer").innerHTML = "<p><strong>Bot:</strong> " + data.response + "</p>";
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
