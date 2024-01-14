@@ -47,4 +47,4 @@ open cmd or powershell and :
  python main.py runserver
 ```
 
-Thank youuu :) !
+
