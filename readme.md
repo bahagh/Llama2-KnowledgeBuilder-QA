@@ -46,5 +46,5 @@ open cmd or powershell and :
 ```bash
  python main.py runserver
 ```
-
+( DONT FORGET TO REPLACE IN THE OPENAI API KEY IN THE YAML FILE "key.yml" !)
 
